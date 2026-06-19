@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon.in Clone Hub | Premium</title>
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="amazon.css">
+</head>
+<body>
+
+  <!-- Amazon Top Navigation Header Bar -->
+  <header>
+    <div class="branding">
+      <span class="logo">amazon.in</span>
+      <span class="prime">prime</span>
+    </div>
+    
+    <div class="search-wrapper">
+      <input type="text" id="searchInput" class="search-input" placeholder="Search products, brands, or categories...">
+      <button class="search-btn">🔍</button>
+    </div>
+
+    <div class="cart-status-box" id="cartTrigger">
+      <span class="cart-icon">🛒</span>
+      <span class="cart-count" id="globalCartCount">0</span>
+      <span class="cart-text">Cart</span>
+    </div>
+  </header>
+
+  <!-- Central Layout Container -->
+  <main>
+    <!-- Left Sidebar: Administrative Product Ingestion Form -->
+    <section class="admin-form-panel">
+      <h3>Add New Product Listing</h3>
+      <form id="addProductForm">
+        <div class="form-group">
+          <label>Product Title Name</label>
+          <input type="text" id="prodTitle" required placeholder="e.g. Sony WH-1000XM5">
+        </div>
+        <div class="form-group">
+          <label>Price (INR ₹)</label>
+          <input type="number" id="prodPrice" required placeholder="e.g. 29999">
+        </div>
+        <div class="form-group">
+          <label>Rating Metric</label>
+          <select id="prodRating">
+            <option value="⭐ 5.0 (Perfect)">5.0 Stars</option>
+            <option value="⭐ 4.5 (Top Choice)" selected>4.5 Stars</option>
+            <option value="⭐ 4.0 (Highly Rated)">4.0 Stars</option>
+            <option value="⭐ 3.5 (Good)">3.5 Stars</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Image Resource Link URL</label>
+          <input type="url" id="prodImage" placeholder="Leave blank for auto stock camera image">
+        </div>
+        <button type="submit" class="submit-prod-btn">Publish to Amazon Catalog</button>
+      </form>
+    </section>
+
+    <!-- Right Window: Dynamic Product Catalog Grid Screen -->
+    <section class="catalog-window">
+      <h2 id="sectionTitle" class="results-header">Today's Deals & Special Offers</h2>
+      <div id="productGrid" class="product-grid"></div>
+    </section>
+
+    <!-- Slide-out Sidebar Shopping Cart Overlay Canvas Drawer -->
+    <aside class="cart-drawer" id="cartDrawer">
+      <div class="drawer-header">
+        <h3 class="drawer-title">Shopping Cart Overview</h3>
+        <button class="close-btn" id="closeDrawer">❌ Close</button>
+      </div>
+      
+      <div class="cart-listing" id="cartListing">
+        <!-- Dynamic row nodes are written inside here by script.js -->
+      </div>
+      
+      <div class="cart-summary">
+        <div class="total-text-row">
+          <span>Subtotal:</span>
+          <span class="total-price" id="cartTotalPrice">₹0</span>
+        </div>
+        <button class="checkout-btn" onclick="alert('Proceeding securely to Sandbox Checkout Platform Gateway payment framework!')">Proceed to Buy</button>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Link to external JS file -->
+  <script src="amazon.js"></script>
+</body>
+</html>
